@@ -1,0 +1,13 @@
+% Define filter parameters
+fs = 1000; % Sampling frequency
+fc = 100; % Cutoff frequency
+N = 50; % Filter length
+
+% Design FIR filter
+b = fir1(N, fc/(fs/2));
+
+% Display filter response
+freqz(b, 1, 1024, fs);
+
+% Apply filter to input signal
+filtered_signal = filter(b, 1, input_signal);
